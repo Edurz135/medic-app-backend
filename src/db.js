@@ -12,9 +12,14 @@ const {
   SpecialtyModel,
 } = require("./models/index");
 
-const sequelize = new Sequelize("medicappdb", "postgres", "1234", {
+const CADENA_CONEXION = process.env.DATABASE_URL;
+
+const sequelize = new Sequelize(CADENA_CONEXION, {
   dialect: "postgres",
 });
+// const sequelize = new Sequelize("medicappdb", "postgres", "1234", {
+//   dialect: "postgres",
+// });
 
 const Answer = AnswerModel(sequelize, Sequelize);
 const Comment = CommentModel(sequelize, Sequelize);
