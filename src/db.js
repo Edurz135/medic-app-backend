@@ -15,7 +15,12 @@ const {
 const CADENA_CONEXION = process.env.DATABASE_URL;
 
 const sequelize = new Sequelize(CADENA_CONEXION, {
-  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
 });
 // const sequelize = new Sequelize("medicappdb", "postgres", "1234", {
 //   dialect: "postgres",
