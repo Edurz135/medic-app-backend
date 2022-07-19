@@ -36,22 +36,22 @@ const Patient = PatientModel(sequelize, Sequelize);
 const Question = QuestionModel(sequelize, Sequelize);
 const Specialty = SpecialtyModel(sequelize, Sequelize);
 
-// Patient.hasMany(Date, { foreignKey: "patientId" });
-// Doctor.hasMany(Date, { foreignKey: "doctorId" });
-// Specialty.hasMany(Doctor, { foreignKey: "specialtyId" });
+Patient.hasMany(Date, { foreignKey: "patientId" });
+Doctor.hasMany(Date, { foreignKey: "doctorId" });
+Specialty.hasMany(Doctor, { foreignKey: "specialtyId" });
 
-// Date.hasMany(Medicament, { foreignKey: "dateId" });
-// Date.hasMany(ExtraNote, { foreignKey: "dateId" });
+Date.hasMany(Medicament, { foreignKey: "dateId" });
+Date.hasMany(ExtraNote, { foreignKey: "dateId" });
 
-// Patient.hasMany(Question, { foreignKey: "patientId" });
-// Doctor.hasMany(Answer, { foreignKey: "doctorId" });
-// Question.hasOne(Answer, { foreignKey: "questionId" });
+Patient.hasMany(Question, { foreignKey: "patientId" });
+Doctor.hasMany(Answer, { foreignKey: "doctorId" });
+Question.hasOne(Answer, { foreignKey: "questionId" });
 
-// Patient.hasMany(Comment, { foreignKey: "patientId" });
+Patient.hasMany(Comment, { foreignKey: "patientId" });
 
-// sequelize.sync({ force: true }).then(() => {
-//   console.log("Tablas sincronizadas.");
-// });
+sequelize.sync({ force: true }).then(() => {
+  console.log("Tablas sincronizadas.");
+});
 
 module.exports = {
   Answer,
