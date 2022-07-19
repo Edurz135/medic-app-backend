@@ -1,0 +1,86 @@
+{
+  "id": "1",
+  "firstName": "John",
+  "middleName": "Random",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "createdAt": "2013/12/20",
+  "updatedAt": "2013/12/20",
+  "birthdate": "1980/10/20",
+  "illnesses": [
+    {
+      "id": "1",
+      "illness_name": "Neumonía",
+      "startDate": "2013/12/20",
+      "endDate": "2013/12/25",
+      "createdAt": "2013/12/25",
+      "updatedAt": "2013/12/25",
+      "medicationsTaken": [
+        {
+          "medication_id": "object_uid",
+          "startDate": "2013/12/21",
+          "endDate": "2013/12/25"
+        }
+      ],
+      "versions": [
+        {
+          "id": "object_uid",
+          "illness_type_id": "object_uid",
+          "startDate": "2013/12/20",
+          "endDate": "2013/12/25",
+          "medicationsTaken": [
+            {
+              "medication_id": "object_uid",
+              "startDate": "2013/12/21",
+              "endDate": "2013/12/25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "illness_name": "Dolor de garganta",
+      "startDate": "2013/12/20",
+      "endDate": "2013/12/25",
+      "createdAt": "2013/12/25",
+      "updatedAt": "2013/12/25",
+      "medicationsTaken": [
+        {
+          "medication_id": "object_uid",
+          "startDate": "2013/12/21",
+          "endDate": "2013/12/25"
+        }
+      ],
+      "versions": [
+        {
+          "id": "object_uid",
+          "illness_type_id": "object_uid",
+          "startDate": "2013/12/20",
+          "endDate": "2013/12/25",
+          "medicationsTaken": [
+            {
+              "medication_id": "object_uid",
+              "startDate": "2013/12/21",
+              "endDate": "2013/12/25"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "official_dates": [
+    {
+      "id": "1",
+      "title": "(12-05-2021) Cita en Nefrología | Especialidad: Pediatría",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit labore possimus sapiente delectus. Cupiditate cumque dolores expedita explicabo! Architecto possimus itaque molestiae, necessitatibus illo odit placeat numquam nesciunt vel provident.",
+      "prescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit labore possimus sapiente delectus. Cupiditate cumque dolores expedita explicabo! Architecto possimus itaque molestiae, necessitatibus illo odit placeat numquam nesciunt vel provident."
+    },
+    {
+      "id": "2",
+      "title": "(12-05-2021) Cita | Especialidad: Cardiología",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit labore possimus sapiente delectus. Cupiditate cumque dolores expedita explicabo! Architecto possimus itaque molestiae, necessitatibus illo odit placeat numquam nesciunt vel provident.",
+      "prescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit labore possimus sapiente delectus. Cupiditate cumque dolores expedita explicabo! Architecto possimus itaque molestiae, necessitatibus illo odit placeat numquam nesciunt vel provident."
+    }
+  ]
+}
