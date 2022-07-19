@@ -49,9 +49,9 @@ const Specialty = SpecialtyModel(sequelize, Sequelize);
 
 // Patient.hasMany(Comment, { foreignKey: "patientId" });
 
-sequelize.sync({ force: true }).then(() => {
-  console.log("Tablas sincronizadas.");
-});
+// sequelize.sync({ force: true }).then(() => {
+//   console.log("Tablas sincronizadas.");
+// });
 
 module.exports = {
   Answer,
