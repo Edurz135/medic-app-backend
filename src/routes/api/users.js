@@ -245,6 +245,19 @@ router.get("/getpatient", async (req, res) => {
   }
 });
 
+router.get("/getdoctor", async (req, res) => {
+  try {
+    const doctor = await Doctor.findOne({
+      where: {
+        id: req.query.id,
+      },
+    });
+    res.status(202).json({ status: "success", result: doctor });
+  } catch (error) {
+    res.status(500).json({ status: "error", message: "Something went wrong" });
+  }
+});
+
 //api/users/getextranotes?dateId=1
 router.get("/getextranotes", async (req, res) => {
   try {
