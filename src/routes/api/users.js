@@ -179,41 +179,14 @@ router.get("/setup", async (req, res) => {
 
 router.post("/createdate", async (req, res) => {
   try {
-    const patientId = req.body.patientId;
-    const doctorId = req.body.doctorId;
-
-    const patient = await Patient.findByPk(patientId);
-    const doctor = await Doctor.findByPk(doctorId);
-
-    const a = await Date.findOne({
-      where: {
-        patientId: patientId,
-        startDate: req.body.startDate,
-      },
+    const date = await Date.create({
+      startDate: req.body.startDate,
+      endDate: req.body.endDate,
+      diagnostic: "",
+      patientId: patientId,
+      doctorId: doctorId,
     });
-
-    const b = await Date.findOne({
-      where: {
-        doctorId: doctorId,
-        startDate: req.body.startDate,
-      },
-    });
-
-    if (!a && !b) {
-      const date = await Date.create({
-        startDate: req.body.startDate,
-        endDate: req.body.endDate,
-        diagnostic: "",
-        patientId: patientId,
-        doctorId: doctorId,
-      });
-      res.status(202).json({ status: "success", result: date });
-    } else {
-      res.status(403).json({
-        status: "error",
-        message: "Doctor or Patient has a date on this date",
-      });
-    }
+    res.status(202).json({ status: "success", result: date });
   } catch (error) {
     res.status(500).json({ status: "error", message: "Something went wrong" });
   }
